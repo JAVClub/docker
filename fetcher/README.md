@@ -7,11 +7,9 @@
 
 首先拉取本项目
 ```bash
-git clone https://github.com/JAVClub/fetcher JAVClub_fetcher
-cd JAVClub_fetcher
+git clone https://github.com/JAVClub/docker JAVClub_docker
+cd JAVClub_docker/fetcher
 cp docker-compose.example.yaml docker-compose.yaml
-cp config/qbittorrent/qBittorrent/qBittorrent.example.conf config/qbittorrent/qBittorrent/qBittorrent.conf
-cp config/dev.example.json config/dev.json
 ```
 
 然后启动 qBittorrent 并对其自行做出适当配置 (账号密码连接数等等)
