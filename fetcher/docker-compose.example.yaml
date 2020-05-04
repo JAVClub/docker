@@ -1,7 +1,7 @@
 version: "2"
 services:
     qbittorrent:
-        image: linuxserver/qbittorrent
+        image: linuxserver/qbittorrent:14.2.0.99201912180418-6819-118af03ubuntu18.04.1-ls62
         container_name: qbittorrent
         environment:
             - PUID=1000
