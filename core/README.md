@@ -18,7 +18,7 @@ cp .env.example .env
 然后构建前端资源
 ```bash
 cd wwwroot
-git clone git clone https://github.com/JAVClub/web.git JAVClub_web
+git clone https://github.com/JAVClub/web.git JAVClub_web
 cd JAVClub_web
 cp src/config.example.js src/config.js
 npm i && npm run build
