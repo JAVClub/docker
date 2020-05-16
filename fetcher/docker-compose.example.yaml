@@ -13,8 +13,8 @@ services:
             - ./config/qbittorrent:/config
             - ./tmp/downloads:/downloads
         ports:
-            - 6881:6881
-            - 6881:6881/udp
+            - 51118:51118
+            - 51118:51118/udp
             - 8585:8585
         restart: unless-stopped
 
