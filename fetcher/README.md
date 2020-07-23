@@ -5,6 +5,13 @@
 
 ## 安装流程
 
+请确保主机已安装 Docker 环境, 如未安装可使用官方脚本安装
+```bash
+curl -o- https://get.docker.com | sudo bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
 首先拉取本项目
 ```bash
 git clone https://github.com/JAVClub/docker JAVClub_docker

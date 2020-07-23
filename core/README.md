@@ -8,7 +8,17 @@
 请确保主机已安装 Node.js 环境 (版本 12.0+), 如未安装可使用 nvm 进行安装
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install node # "node" is an alias for the latest version
+```
+
+请再确保主机已安装 Docker 环境, 如未安装可使用官方脚本安装
+```bash
+curl -o- https://get.docker.com | sudo bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 首先拉取本项目
