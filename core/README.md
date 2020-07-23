@@ -3,9 +3,13 @@
   <br>JAVClub</br>
 </h1>
 
-## 安装流程
+## Quickstart
 
-请确保本地有 Node.js 环境, 若没有请参考[这里](https://computingforgeeks.com/how-to-install-latest-nodejs-on-ubuntu-debian-linux/)安装
+请确保主机已安装 Node.js 环境 (版本 12.0+), 如未安装可使用 nvm 进行安装
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install node # "node" is an alias for the latest version
+```
 
 首先拉取本项目
 ```bash
@@ -13,6 +17,7 @@ git clone https://github.com/JAVClub/docker.git JAVClub_docker
 cd JAVClub_docker/core
 cp docker-compose.example.yaml docker-compose.yaml
 cp .env.example .env
+vi .env # 修改数据库密码
 ```
 
 然后构建前端资源
@@ -36,8 +41,7 @@ vi etc/nginx/conf.d/你的域名.conf # 进入后将第二行改为你自己的�
 vi .env # 配置数据库密码
 sudo docker-compose up -d mysql phpmyadmin
 ```
-执行成功后稍等片刻后访问 `localhost:8080` 并登录, 在账户处创建用户 `javclub` 并勾选 `创建与用户同名的数据库并授予所有权限。`
-创建完成后在数据库中导入目录下的 `db.sql` 即可
+执行成功后稍等片刻后访问 `http://your.domain:8080` 并登录, 在账户处创建用户 `javclub` 并勾选 `创建与用户同名的数据库并授予所有权限。`
 
 最后来创建 core 的配置文件
 ```bash
@@ -55,12 +59,12 @@ vi config/dev.json
 ```bash
 sudo docker-compose up -d
 ```
-然后访问 `http://your.domain`, 使用 `admin` 和 `123456` 登录, 理论来讲你就可以看见空荡荡的首页了
+然后访问 `http://your.domain`, 使用 `admin` 和 `admin` 登录, 理论来讲你就可以看见空荡荡的首页了
 
 ## 后续
 这样肯定不是你想要的, 这里提供几个你仍需要做的事情
 - [设置 fetcher (Docker)](https://github.com/JAVClub/docker/tree/master/fetcher)
-- [配置 Driver](https://github.com/JAVClub/core#配置文件) 以及 [Driver Workers](https://github.com/JAVClub/workers)
+- [配置 Driver](https://github.com/JAVClub/core#配置文件) 以及 [Proxy Workers](https://github.com/JAVClub/workers)
 - [配置 Core Importer](https://github.com/JAVClub/core#配置)
 
 ## 免责声明

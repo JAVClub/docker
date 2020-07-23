@@ -18,7 +18,7 @@ sudo docker-compose up -d qbittorrent
 # 此时 qBittorrent 已在端口 8585 上运行, 默认用户名/密码 admin/adminadmin
 ```
 **注意1:** 这个版本的 fetcher 使用 qBittorrent 自带的种子管理器来判断是否已做完种, 所以请在选项 -> BitTorrent 中按照你的需求勾选做种限制中的任意一项(或两项一起)
-**注意2:** 由于某些 PT 站点限制默认端口, 故将做种端口改为 `51118` 及 `51118/udp`, 请在配置 qBittorrent 自行更改
+**注意2:** 由于某些 PT 站点限制默认端口, 故将做种端口改为 `51118` 及 `51118/udp`, 请在 qBittorrent 中确认是否更改
 
 接下来配置 fetcher
 ```bash

@@ -21,7 +21,7 @@ services:
 
     mysql:
         image: "${MYSQL_VERSION}"
-        command: --default-authentication-plugin=mysql_native_password
+        command: --default-authentication-plugin=caching_sha2_password
         volumes:
             - ./etc/mysql/my.cnf:/etc/my.cnf
             - ./etc/mysql/my.cnf.d:/etc/my.cnf.d
@@ -29,6 +29,17 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_ROOT_HOST: "%"
+            TZ: ${TZ}
+        restart: on-failure
+
+    phpmyadmin:
+        image: "${PMA_VERSION}"
+        ports:
+            - 8080:80
+        depends_on:
+            - mysql
+        environment:
+            PMA_HOST: mysql
             TZ: ${TZ}
         restart: on-failure
 
@@ -42,14 +53,3 @@ services:
             NODE_ENV: dev
             TZ: ${TZ}
         restart: unless-stopped
-
-    phpmyadmin:
-        image: "${PMA_VERSION}"
-        ports:
-            - 8080:80
-        depends_on:
-            - mysql
-        environment:
-            PMA_HOST: mysql
-            TZ: ${TZ}
-        restart: on-failure
